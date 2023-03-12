@@ -29,6 +29,7 @@ body {
 img {
   max-width:100%;
   height:auto;
+  transition: transform 3s ease;
 }
 
 h1 {
@@ -43,6 +44,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 #accordion {
@@ -52,10 +54,10 @@ h1 {
 }
 
 #accordion li {
+  display: block;
   list-style: none;
   width: 100%;
   height: auto;
-  
   padding: 1em 0 1em 0;
   border-top: 0.5px solid #aea1a1;
   font-size: 2em;
@@ -68,7 +70,7 @@ h1 {
   display: none;
 }
 /*checked item*/
-#accordion li input[type="radio"]:checked + label  {
+#accordion li input[type="radio"]:checked + label   {
   color: #2f2e25;
 }
 /*hovered list change color*/
@@ -101,15 +103,15 @@ h1 {
 }
 
 /* checked meme display on load*/
-#accordion input[type="radio"]:checked + label + .meme{
+#accordion li input[type="radio"]:checked + label + .meme{
   max-height: 100em;
-  transition: max-height 2s ease-in-out;
+  transition: max-height 1s ease-in-out;
 }
 
 /* hovered title  display meme*/
 #accordion li:hover label + .meme {
   max-height: 10em;
-  transform: scale3d(1.03, 1.03, 1.03);
+  transform: scale3d(1.04, 1.04, 1.04);
   transition: max-height 1s ease-in-out !important;
 }
 
@@ -183,3 +185,20 @@ h1 {
   }
 }
 
+@media (hover: hover) {
+  #accordion li:hover label + .meme {
+    max-height: 10em;
+    transform: scale3d(1.04, 1.04, 1.04);
+    transition: max-height 1s ease-in-out !important;
+  }
+  
+  #accordion:hover label {
+    color: #474638;
+  }
+
+  #accordion li input[type="radio"]:checked + label + .meme{
+    max-height: 10em;
+    transition: max-height 1s ease;
+  }
+
+}
