@@ -23,7 +23,7 @@ body {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 200px;
+  padding: 0 10em;
   
 }
 
@@ -39,7 +39,7 @@ h1 {
 }
 
 #accordion {
-  margin: 100px auto;
+  margin: 8em auto;
   cursor: pointer;
 }
 
@@ -65,6 +65,7 @@ h1 {
 /*hovered list change color*/
 #accordion input[type="radio"]:hover + label +li {
   color:#2f2e25;
+  
 }
 
 #accordion li label {
@@ -97,14 +98,15 @@ display: none;
 /* checked meme display on load*/
 #accordion input[type="radio"]:checked +label + .meme { 
   max-height: 100em; 
+  transition: max-height 2s ease-in-out;
 }
 
 /* hovered title  display meme*/
 #accordion li:hover label + .meme {
-  max-height: 100em; 
-  transition: max-height 2s;
-  transform: scale(1.02);
-  transition: transform 0.5s ease-out;
+  max-height: 10em; 
+  transform: scale3d(1.03, 1.03, 1.03);
+  transition: max-height 1s ease-in-out !important; 
+  
 }
 
 /* span icons*/
@@ -120,16 +122,18 @@ display: none;
 
 #accordion:hover li  .accordion-expand-icon {
   opacity: 1;
+  transition: transform .3s ease-out;
   
 }
 
-/*change icon to 45% when hover*/
+/*change checked icon to 45% when hover*/
 #accordion li input[type="radio"]:checked + label .accordion-expand-icon {
   transform: rotate(45deg);
+  transition: transform .3s ease-out;
 }
 /*change icon to 45% when hover*/
 #accordion:hover li:hover  label .accordion-expand-icon {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 
