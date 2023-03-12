@@ -33,8 +33,9 @@ img {
 
 h1 {
   font-size: 4em;
+  font-weight: 600;
   color: #2f2e25;
-  padding-left: 4rem;
+  padding-left: 2rem;
   margin: 0;
 }
 
