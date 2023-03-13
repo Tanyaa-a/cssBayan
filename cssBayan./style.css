@@ -5,7 +5,7 @@
 body {
   display: flex;
   flex-direction: column;
-  
+
   align-items: center;
   font-family: "Roboto";
   font-style: normal;
@@ -22,13 +22,13 @@ body {
 
 .container {
   width: 100%;
-  max-width: 50em;
+  max-width: 40em;
   margin: 0 auto;
 }
 
 img {
-  max-width:100%;
-  height:auto;
+  max-width: 100%;
+  height: auto;
   transition: transform 3s ease;
 }
 
@@ -44,12 +44,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 #accordion {
   margin: 0 auto;
-  padding:1em;
+  padding: 1em;
   cursor: pointer;
 }
 
@@ -59,7 +58,7 @@ h1 {
   width: 100%;
   height: auto;
   padding: 1em 0 1em 0;
-  border-top: .01em solid #aea1a1;
+  border-top: 0.5px solid #aea1a1;
   font-size: 2em;
   font-weight: bold;
   color: #3d7489;
@@ -70,7 +69,7 @@ h1 {
   display: none;
 }
 /*checked item*/
-#accordion li input[type="radio"]:checked + label   {
+#accordion li input[type="radio"]:checked + label {
   color: #2f2e25;
 }
 /*hovered list change color*/
@@ -103,7 +102,7 @@ h1 {
 }
 
 /* checked meme display on load*/
-#accordion  li input[type="radio"]:checked + .meme{
+#accordion li input[type="radio"]:checked + label + .meme {
   max-height: 100em;
   transition: max-height 1s ease-in-out;
 }
@@ -114,8 +113,6 @@ h1 {
   transform: scale3d(1.04, 1.04, 1.04);
   transition: max-height 1s ease-in-out !important;
 }
-
-
 
 /* span icons*/
 
@@ -145,31 +142,30 @@ h1 {
 
 /* Mobile breakpoint - 320px - 568px*/
 @media (max-width: 820px) {
-  #accordion {
-    width: 100%;
-    margin: 0;
-  }
-  .meme {
-    margin: 0;
-    border: none;
-    width: auto;
-  }
- h1 {
+  h1 {
     font-size: 2.5em;
-    padding: 0 .5em 0 .5em;
-    
+    padding: 0 0.5em 0 0.5em;
   }
 
   #accordion li label {
-    font-size: .8em;
-    
+    font-size: 0.8em;
     font-weight: 800;
+  }
+  #accordion .meme {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+  }
+
+  #accordion li input[type="radio"]:checked + .meme {
+    max-height: 100em;
+    transition: max-height 1s ease-in-out;
   }
 }
 
 /* Tablet breakpoint - 820px */
 @media (min-width: 820px) and (max-width: 1180px) {
-   .container{
+  .container {
     width: 100%;
     margin: 0;
   }
@@ -177,11 +173,11 @@ h1 {
     margin: 0;
     border: none;
   }
- h1 {
+  h1 {
     font-size: 3em;
-    padding: .5em;
+    padding: 0.5em;
   }
-  #accordion li label{
+  #accordion li label {
     font-size: 1.5em;
     padding: 1.1em;
   }
@@ -193,14 +189,9 @@ h1 {
     transform: scale3d(1.04, 1.04, 1.04);
     transition: max-height 1s ease-in-out !important;
   }
-  
-  #accordion:hover label {
-    color: #474638;
-  }
 
-  #accordion li input[type="radio"]:checked + label + .meme{
+  #accordion li input[type="radio"]:checked + label + .meme {
     max-height: 10em;
-    transition: max-height 1s ease;
+    transition: max-height 2s ease;
   }
-
 }
