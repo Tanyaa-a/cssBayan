@@ -5,7 +5,7 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  
   align-items: center;
   font-family: "Roboto";
   font-style: normal;
@@ -22,7 +22,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 50em;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ h1 {
   width: 100%;
   height: auto;
   padding: 1em 0 1em 0;
-  border-top: 0.5px solid #aea1a1;
+  border-top: .01em solid #aea1a1;
   font-size: 2em;
   font-weight: bold;
   color: #3d7489;
@@ -83,8 +83,8 @@ h1 {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1em;
+  padding-right: 1em;
   cursor: pointer;
 }
 
@@ -103,7 +103,7 @@ h1 {
 }
 
 /* checked meme display on load*/
-#accordion li input[type="radio"]:checked + label + .meme{
+#accordion  li input[type="radio"]:checked + .meme{
   max-height: 100em;
   transition: max-height 1s ease-in-out;
 }
@@ -114,6 +114,8 @@ h1 {
   transform: scale3d(1.04, 1.04, 1.04);
   transition: max-height 1s ease-in-out !important;
 }
+
+
 
 /* span icons*/
 
