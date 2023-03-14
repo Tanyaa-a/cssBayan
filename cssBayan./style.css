@@ -182,18 +182,17 @@ h1 {
     font-size: .8em;
     padding: .5em;
   }
+  
 }
 
 @media (hover: hover)
 
 {
-  #accordion input[type="radio"]:hover + label + li {
-    color: #2f2e25;
+  #accordion input[type="radio"]:focus+ label + li {
+    color: #3d7489;
   }
 
-  #accordion:hover li {
-    color: #474638;
-  }
+  
   
   #accordion li:hover label + .meme {
     max-height: 10em;
@@ -201,8 +200,6 @@ h1 {
     transition: max-height 1s ease-in-out !important;
   }
 
-  
- 
   #accordion:hover li .accordion-expand-icon {
     opacity: 1;
     transition: transform 0.3s ease-out;
@@ -212,3 +209,4 @@ h1 {
   }
   
 }  
+
