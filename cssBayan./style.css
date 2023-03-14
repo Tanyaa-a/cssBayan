@@ -53,15 +53,24 @@ h1 {
 }
 
 #accordion li {
-  display: block;
   list-style: none;
   width: 100%;
   height: auto;
-  padding: 1em 0 1em 0;
+  padding: .5em 0 .5em 0;
   border-top: 0.5px solid #aea1a1;
   font-size: 2em;
   font-weight: bold;
   color: #3d7489;
+  cursor: pointer;
+}
+
+#accordion li label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-size: 1em;
+  padding: 1em;
   cursor: pointer;
 }
 
@@ -75,16 +84,6 @@ h1 {
 /*hovered list change color*/
 #accordion input[type="radio"]:hover + label + li {
   color: #2f2e25;
-}
-
-#accordion li label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  padding-left: 1em;
-  padding-right: 1em;
-  cursor: pointer;
 }
 
 #accordion:hover li {
@@ -102,9 +101,12 @@ h1 {
 }
 
 /* checked meme display on load*/
-#accordion li input[type="radio"]:checked + label + .meme {
+#accordion li input[type="radio"]:checked + label + .meme  {
   max-height: 100em;
   transition: max-height 1s ease-in-out;
+}
+.checkit + li input[type="radio"]:checked +label + .meme {
+  max-height: 100em;
 }
 
 /* hovered title  display meme*/
@@ -148,8 +150,8 @@ h1 {
   }
 
   #accordion li label {
-    font-size: 0.8em;
-    font-weight: 800;
+    font-size: 0.5em;
+    font-weight: 600;
   }
   #accordion .meme {
     max-height: 0;
@@ -175,11 +177,10 @@ h1 {
   }
   h1 {
     font-size: 3em;
-    padding: 0.5em;
   }
   #accordion li label {
-    font-size: 1.5em;
-    padding: 1.1em;
+    font-size: .8em;
+    padding: .5em;
   }
 }
 
@@ -193,5 +194,12 @@ h1 {
   #accordion li input[type="radio"]:checked + label + .meme {
     max-height: 10em;
     transition: max-height 2s ease;
+  }
+  /* #accordion li label .accordion-expand-icon {
+    transform: rotate(45deg);
+  } */
+  .accordion-expand-icon:focus {
+    opacity: 1;
+    
   }
 }
