@@ -184,22 +184,31 @@ h1 {
   }
 }
 
-@media (hover: hover) {
+@media (hover: hover)
+
+{
+  #accordion input[type="radio"]:hover + label + li {
+    color: #2f2e25;
+  }
+
+  #accordion:hover li {
+    color: #474638;
+  }
+  
   #accordion li:hover label + .meme {
     max-height: 10em;
     transform: scale3d(1.04, 1.04, 1.04);
     transition: max-height 1s ease-in-out !important;
   }
 
-  #accordion li input[type="radio"]:checked + label + .meme {
-    max-height: 10em;
-    transition: max-height 2s ease;
-  }
-  /* #accordion li label .accordion-expand-icon {
-    transform: rotate(45deg);
-  } */
-  .accordion-expand-icon:focus {
+  
+ 
+  #accordion:hover li .accordion-expand-icon {
     opacity: 1;
-    
+    transition: transform 0.3s ease-out;
   }
-}
+  #accordion:hover li:hover label .accordion-expand-icon {
+    transform: rotate(45deg);
+  }
+  
+}  
